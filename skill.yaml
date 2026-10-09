@@ -1,10 +1,10 @@
 name: sales-data-dashboard-skill
-display_name: B端销售数据分析&安索夫增长分析
+display_name: B端销售数据分析&分析建议
 version: 1.0.0
 description: >
   解析B端销售出库单据，自动构建全套业务数据看板，包含全局销售看板、业务客服业绩看板、
-  公司总目标看板；支持多维度排名、趋势图表、明细下钻，配套安索夫矩阵模型做业务增长
-  策略诊断，适配多系统导出文件表头自动识别。
+  公司总目标看板；支持多维度排名、趋势图表、明细下钻，并内置产品×市场增长矩阵的「分析建议」
+  模块（2×2模型图，各象限展开对应客户与产品），适配多系统导出文件表头自动识别。
 author: custom
 type: custom_skill
 trigger:
@@ -13,12 +13,12 @@ trigger:
     - 销售看板
     - 业绩排名
     - 公司目标看板
-    - 安索夫模型
-    - 安索夫矩阵
+    - 分析建议
+    - 增长矩阵分析
 llm_prompt_ref: ./prompts/dashboard_prompt.md
 modules:
-  - name: ansoff
-    prompt_ref: ./prompts/ansoff_analysis.md
+  - name: recommendation
+    prompt_ref: ./prompts/analysis_recommendation.md
 docs:
   structure: ./docs/dashboard_structure.md
   rules: ./docs/rules.md
